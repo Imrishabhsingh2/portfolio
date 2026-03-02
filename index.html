@@ -141,6 +141,42 @@ nav{
   transform:translateY(-10px);
   box-shadow:0 0 25px rgba(0,255,255,0.3);
 }
+  /* HERO BASE */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+}
+
+/* 🔥 MOBILE FIX */
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;   /* stack vertically */
+    text-align:center;
+    padding:60px 20px;
+  }
+
+  .hero-content{
+    width:100%;
+  }
+
+  .hero-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .hero-image img{
+    width:250px;   /* smaller image for mobile */
+  }
+
+  .hero h1{
+    font-size:1.8rem;
+  }
+
+}
 #portfolio .section-title{
   font-size:2rem;
   margin-bottom:40px;
@@ -1250,3 +1286,4 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
 </body>
 
 </html>
+
