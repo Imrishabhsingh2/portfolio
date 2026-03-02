@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishabh Singh Somvanshi | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+<style>
+  #about{
+  padding-top:0px;
+  padding-bottom: 0px;
+}
+  .logo img{
+  height:50px;      /* adjust size if needed */
+  width:auto;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+    .theme-toggle{
+  margin-left: 20px;   /* adds space before Switch button */
+}
+      .timeline{
+  border-left:2px solid var(--primary);
+  padding-left:30px;
+}
+
+.timeline-item{
+  margin-bottom:40px;
+  position:relative;
+}
+
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:-41px;
+  top:5px;
+  width:15px;
+  height:15px;
+  background:var(--primary);
+  border-radius:50%;
+  box-shadow:0 0 15px var(--primary);
+}
+
+.timeline-item h3{
+  margin-bottom:5px;
+  font-size:1.2rem;
+}
+
+.timeline-item h4{
+  font-size:0.9rem;
+  opacity:0.6;
+  margin-bottom:10px;
+}
+.section-title{
+  font-size:2rem;
+  margin-bottom:40px;
+  text-align:left;
+  width:100%;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);  /* exactly 3 per row */
+  gap:30px;
+}
+/* Tablet */
+@media(max-width:992px){
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .services-grid{
+    grid-template-columns: 1fr;
+  }
+}
+.service-card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid rgba(0,255,255,0.1);
+  backdrop-filter:blur(15px);
+  transition:0.4s ease;
+}
+
+.service-card h3{
+  margin-bottom:15px;
+  font-size:1.2rem;
+  color:var(--primary);
+}
+
+.service-card p{
+  font-size:0.95rem;
+  line-height:1.6;
+  opacity:0.85;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+#portfolio .section-title{
+  font-size:2rem;
+  margin-bottom:40px;
+  text-align:left;
+  width:100%;
+}
+.portfolio-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);   /* 4 per row */
+  gap:25px;
+}
+/* Tablet */
+@media(max-width:1100px){
+  .portfolio-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small Tablet */
+@media(max-width:800px){
+  .portfolio-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:500px){
+  .portfolio-grid{
+    grid-template-columns: 1fr;
+  }
+}
+.portfolio-item{
+  overflow:hidden;
+  border-radius:20px;
+  position:relative;
+}
+
+.portfolio-item img{
+  width:100%;
+  display:block;
+  transition:0.5s ease;
+}
+
+.portfolio-item:hover img{
+  transform:scale(1.1);
+  filter:brightness(0.7);
+}
+
+.portfolio-item::after{
+  content:"View Project";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#fff;
+  opacity:0;
+  transition:0.5s;
+  font-weight:600;
+}
+
+.portfolio-item:hover::after{
+  opacity:1;
+}
+.hero-image{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+.hero-image img{
+  width:320px;
+  border-radius:20px;
+  position:relative;
+  z-index:2;
+  object-fit:cover;
+  display:block;
+}
+
+/* Glow Effect */
+.image-glow{
+  position:absolute;
+  width:550px;
+  height:400px;
+  background:radial-gradient(circle, rgba(0,240,255,0.6) 0%, rgba(0,240,255,0.2) 40%, transparent 70%);
+  filter:blur(60px);
+  z-index:1;
+  animation:floatGlow 4s ease-in-out infinite alternate;
+}
+
+.magazine-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);   /* 4 per row */
+  gap:25px;
+  margin-top:40px;
+}
+
+.mag-card{
+  overflow:hidden;
+  border-radius:15px;
+  background:#111;
+  transition:0.4s ease;
+}
+
+.mag-card img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:0.4s ease;
+}
+
+/* Hover Effect */
+.mag-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+.mag-card:hover img{
+  transform:scale(1.05);
+}
+
+/* Tablet */
+@media(max-width:1100px){
+  .magazine-grid{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+/* Small Tablet */
+@media(max-width:800px){
+  .magazine-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:500px){
+  .magazine-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Certifications */
+#certifications .section-title{
+  padding-left: 0px;
+  margin-bottom:40px;
+  align-self: left;
+}
+@keyframes floatGlow{
+  from{
+    transform:scale(1);
+    opacity:0.7;
+  }
+  to{
+    transform:scale(1.1);
+    opacity:1;
+  }
+}
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.cert-item{
+  position:relative;
+  border-radius:15px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.cert-item img{
+  width:100%;
+  height:100%;
+  object-fit:contain;   /* no crop */
+  background:#fefefe;
+}
+
+.cert-overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:15px;
+  text-align:center;
+  background:rgba(0,0,0,0.7);
+  color:#fff;
+  transform:translateY(100%);
+  transition:0.4s;
+}
+
+.cert-item:hover img{
+  transform:scale(1.08);
+  filter:brightness(0.7);
+}
+
+.cert-item:hover .cert-overlay{
+  transform:translateY(0);
+}
+:root{
+  --primary:#00f0ff;
+  --bg:#050505;
+  --gradient:linear-gradient(45deg,#00f0ff,#8a2be2);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Outfit',sans-serif;
+}
+
+body{
+  margin: 0px;
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* Loader */
+.loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.loader h1{
+  color:var(--primary);
+  font-size:2rem;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:0.3;}
+  50%{opacity:1;}
+  100%{opacity:0.3;}
+}
+
+/* Cursor Glow */
+.cursor{
+  position:fixed;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:var(--primary);
+  pointer-events:none;
+  mix-blend-mode:screen;
+  filter:blur(15px);
+  z-index:3000;
+}
+
+/* Navbar */
+nav{
+  position:fixed;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.5);
+  z-index:1000;
+}
+
+nav a{
+  color:#fff;
+  margin-left:25px;
+  text-decoration:none;
+}
+
+.theme-toggle{
+  cursor:pointer;
+  padding:8px 15px;
+  border-radius:20px;
+  background:var(--gradient);
+  border:none;
+  color:#000;
+  font-weight:600;
+}
+
+/* Hero */
+
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 10%;
+  padding-bottom:0;
+}
+
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;   /* perfect modern spacing */
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.tool-card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s;
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(0,255,255,0.1);
+}
+
+.tool-card img{
+  width:60px;
+  margin-bottom:15px;
+  transition:0.4s;
+}
+
+.tool-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+.tool-card:hover img{
+  transform:scale(1.1);
+}
+.btn{
+  margin-top:30px;
+  padding:12px 30px;
+  border-radius:30px;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  text-decoration:none;
+  transition:0.4s;
+}
+
+.btn:hover{
+  background:var(--primary);
+  color:#000;
+}
+
+/* Sections */
+section{
+  padding:40px 10%;
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:40px;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:35px;
+  border-radius:20px;
+  backdrop-filter:blur(20px);
+  transition:0.4s;
+}
+
+/* Skills */
+.skill{
+  margin-bottom:25px;
+}
+
+.skill-bar{
+  width:100%;
+  height:8px;
+  background:#222;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.skill-progress{
+  width:0;
+  height:100%;
+  background:var(--gradient);
+}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:30px;
+}
+
+.project-card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s ease;
+  border:1px solid rgba(0,255,255,0.1);
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+
+.short-desc{
+  margin-top:8px;
+  opacity:0.8;
+}
+
+.project-details{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s ease;
+  margin-top:15px;
+  opacity:0.9;
+}
+
+.project-card.active .project-details{
+  max-height:500px;
+}
+
+.project-details ul{
+  margin-top:10px;
+  padding-left:18px;
+}
+
+@media(max-width:768px){
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.thumbnail-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);   /* 3 per row */
+  gap:25px;
+  margin-top:40px;
+}
+
+.thumbnail-card{
+  overflow:hidden;
+  border-radius:15px;
+  background:#111;
+  transition:0.4s ease;
+}
+
+.thumbnail-card img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:0.4s ease;
+}
+
+.thumbnail-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+.thumbnail-card:hover img{
+  transform:scale(1.05);
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .thumbnail-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .thumbnail-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* Contact Section */
+#contact{
+  padding:80px 10%;
+}
+
+.contact-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:60px;
+  margin-top:50px;
+  flex-wrap:wrap;
+}
+
+/* Left side */
+.contact-left{
+  flex:1;
+  min-width:250px;
+  line-height:2;
+  font-size:1rem;
+  opacity:0.85;
+}
+
+/* Right side form */
+.contact-right{
+  flex:1;
+  min-width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* Name + Email in one row */
+.input-row{
+  display:flex;
+  gap:20px;
+}
+
+.input-row input{
+  flex:1;
+}
+
+/* Inputs */
+.contact-right input,
+.contact-right textarea{
+  padding:14px 16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(0,255,255,0.2);
+  border-radius:12px;
+  color:#fff;
+  outline:none;
+  font-size:0.95rem;
+  transition:0.3s ease;
+}
+
+/* Textarea full width */
+.contact-right textarea{
+  resize:none;
+  height:120px;
+}
+
+/* Focus glow */
+.contact-right input:focus,
+.contact-right textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 12px var(--primary);
+}
+
+/* Button */
+.contact-right button{
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:var(--primary);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.contact-right button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 20px var(--primary);
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+  .contact-wrapper{
+    flex-direction:column;
+  }
+
+  .input-row{
+    flex-direction:column;
+  }
+}
+/* Footer */
+footer{
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+@media(max-width:768px){
+  body{cursor:auto;}
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="loader"><h1>Loading...</h1></div>
+<div class="cursor"></div>
+
+<nav>
+  <div class="logo">
+  <img src="logos\main logo.png" alt="Rishabh Logo">
+</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <button class="theme-toggle">Switch</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-image">
+  <div class="image-glow"></div>
+  <img src="images\My.png" alt="Rishabh Singh">
+</div>
+  <div class="hero-content">
+  <h1>Hi, I'm <span>Rishabh Singh Somvanshi</span></h1>
+  <p>Digital Marketer & Software Developer</p>
+  <a href="#projects" class="btn">View Work</a>
+</div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About</h2>
+  <p>I’m Rishabh Singh Somvanshi, a results-driven digital marketer and creative strategist focused on building brands that stand out and scale fast. I specialize in high-converting ad campaigns, performance marketing, and impactful graphic design that doesn’t just look good — it delivers measurable growth. From SEO to paid ads and web experiences, I combine creativity with data to turn ideas into revenue-generating digital assets.</p>
+</section>
+ <section id="experience">
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Graphic Designer</h3>
+      <h4>Narrative Business Studio | Feb 2024 – Jun 2024</h4>
+      <p>
+        Designed branding & social creatives for cafés and retail brands. 
+        Increased engagement by 30–40%. Executed high-converting Instagram & Facebook campaigns.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Digital Marketing Intern</h3>
+      <h4>Gharaaj Technologies | Dec 2023 – Jan 2024</h4>
+      <p>
+        Managed SEO, Meta Ads & Google Ads campaigns for rental listings. 
+        Reduced cost per lead and improved lead quality through funnel optimization.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Business Analysis Trainee</h3>
+      <h4>Intensify Research Services | Aug 2022 – Sep 2022</h4>
+      <p>
+        Assisted in stock advisory strategy, client communication & subscription sales. 
+        Supported research team with client insights.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Master of Computer Science</h3>
+      <h4>R.G.P.V, Indore | 2024 – 2026</h4>
+      <p>CGPA: 7.43 | Currently pursuing advanced computing & software fundamentals.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>B.Sc. Computer Science</h3>
+      <h4>D.A.V.V, Indore | 2020 – 2024</h4>
+      <p>CGPA: 7.47 | Strong foundation in programming & web technologies.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>12th</h3>
+      <h4>M.P. Board, Indore | 2020 </h4>
+      <p>CGPA: 55% | Where its all started making sense.</p>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skill">
+    <p>Social Media Management</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+  </div>
+  <div class="skill">
+    <p>Search Engine Optimization</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+  </div>
+    <div class="skill">
+    <p>Graphic Designing</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+  </div>
+    <div class="skill">
+    <p>Google Ads</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+  </div>
+    <div class="skill">
+    <p>Email Marketing</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+  </div>
+  <div class="skill">
+    <p>Web Design</p>
+    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+  </div>
+</section>
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Graphic Design</h3>
+        <p>
+          High-impact visual designs including branding, social media creatives,
+          ad banners, and marketing materials that increase engagement and
+          strengthen brand identity.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Social Media Management</h3>
+        <p>
+          Strategic content planning, audience growth, and performance-driven
+          campaigns designed to build brand presence and drive consistent
+          engagement across platforms.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Search Engine Optimization</h3>
+        <p>
+          Technical SEO, keyword strategy, and on-page optimization to improve
+          rankings, increase organic traffic, and generate long-term growth.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Google & Meta Ads</h3>
+        <p>
+          Data-driven ad campaigns focused on lead generation, conversions,
+          and maximizing ROI through precise targeting and funnel optimization.
+        </p>
+      </div>
+      <div class="service-card">
+        <h3>Email Marketing</h3>
+        <p>
+          Strategic email campaigns, automation flows, and audience segmentation 
+          designed to nurture leads, increase retention, and drive repeat revenue 
+          through personalized communication.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>
+          Modern, responsive, and high-converting websites built with clean UI,
+          optimized performance, and seamless user experience.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="tools">
+  <h2 class="section-title">Tools & Technologies</h2>
+
+  <div class="tools-grid">
+
+    <!-- Design Tools -->
+    <div class="tool-card">
+      <img src="logos\Photoshop.png" alt="Adobe Photoshop">
+      <p>Adobe Photoshop</p>
+    </div>
+
+    <div class="tool-card">
+      <img src="logos\illustrator.png" alt="Adobe Illustrator">
+      <p>Adobe Illustrator</p>
+    </div>
+
+    <div class="tool-card">
+      <img src="logos\canva.png" alt="Canva">
+      <p>Canva</p>
+    </div>
+
+    <!-- Languages -->
+    <div class="tool-card">
+      <img src="logos\Python.png" alt="Python">
+      <p>Python</p>
+    </div>
+
+    <div class="tool-card">
+      <img src="logos\JS.png" alt="JavaScript">
+      <p>JavaScript</p>
+    </div>
+
+    <div class="tool-card">
+      <img src="logos\React.png" alt="MERN Stack">
+      <p>MERN Stack</p>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <h2 class="section-title">Social Media Posts</h2>
+  <div class="portfolio-grid">
+    
+    <div class="portfolio-item">
+      <img src="Posts\rolex green post.png" alt="Instagram Post Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\nike post design.jpg" alt="Brand Poster Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\JBL Post Design.png" alt="Ad Creative Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\nail post.png" alt="Ad Creative Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\olay cream.png" alt="Ad Creative Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\kfc chicken tacos.png" alt="Ad Creative Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\party template.png" alt="Ad Creative Design">
+    </div>
+
+    <div class="portfolio-item">
+      <img src="Posts\Model Post Design.jpg" alt="Ad Creative Design">
+    </div>
+</section>
+
+<section id="thumbnails">
+  <div class="container">
+    <h2 class="section-title">Thumbnail Designs</h2>
+    <div class="thumbnail-grid">
+      <div class="thumbnail-card">
+        <img src="Posts\Broadcast Thumbnail.png" alt="Thumbnail 1">
+      </div>
+      <div class="thumbnail-card">
+        <img src="Posts\Scary Moments Thumbnail.png" alt="Thumbnail 2">
+      </div>
+      <div class="thumbnail-card">
+        <img src="Posts\Silence Thumbnail.png" alt="Thumbnail 3">
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="magazine">
+  <div class="container">
+    <h2 class="section-title">Magazine Cover Designs</h2>
+
+    <div class="magazine-grid">
+
+      <div class="mag-card">
+        <img src="Magzine Design\Lifestyle Magazine.png" alt="Magazine Cover 1">
+      </div>
+
+      <div class="mag-card">
+        <img src="Magzine Design\Magazine 1.png" alt="Magazine Cover 2">
+      </div>
+
+      <div class="mag-card">
+        <img src="Magzine Design\Elle magazine.png" alt="Magazine Cover 3">
+      </div>
+
+      <div class="mag-card">
+        <img src="Magzine Design\fauget magazine.png" alt="Magazine Cover 4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <img src="certification\lead_gen certificate.jpeg" alt="Lead Generation Certificate">
+      <div class="cert-overlay">Lead Generation Certification</div>
+    </div>
+
+    <div class="cert-item">
+      <img src="certification\SEO.png" alt="SEO Certificate">
+      <div class="cert-overlay">SEO Certificate</div>
+    </div>
+
+    <div class="cert-item">
+      <img src="certification\digital marketing certificate.jpg" alt="Digital Marketing Certificate">
+      <div class="cert-overlay">Digital Marketing Certificate</div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card" onclick="toggleProject(this)">
+        <h3>AI Image Generator</h3>
+        <p class="short-desc">
+          AI-powered image generation web app.
+        </p>
+        <div class="project-details">
+          <p><strong>Tech Stack:</strong> React.js, Node.js, MongoDB</p>
+          <ul>
+            <li>Built an AI-based image generation web app where users enter prompts to generate images.</li>
+            <li>Integrated ClipDrop API for high-quality AI image creation.</li>
+            <li>Developed responsive frontend with React.</li>
+            <li>Implemented Node.js backend with MongoDB for prompt history management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" onclick="toggleProject(this)">
+        <h3>Automated Work Reminder Tracker</h3>
+        <p class="short-desc">
+          Self-running automated email reminder system.
+        </p>
+        <div class="project-details">
+          <p><strong>Tech Stack:</strong> Google Apps Script, Google Sheets</p>
+          <ul>
+            <li>Created automated work reminder system using Google Sheets.</li>
+            <li>Script checks work time daily.</li>
+            <li>Time-driven trigger sends automatic email reminders.</li>
+            <li>Fully automated workflow to ensure no missed work.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+<section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+
+  <div class="contact-wrapper">
+
+    <div class="contact-left">
+      <p><strong>Email:</strong> imrishabhsingh2@gmail.com</p>
+      <p><strong>Phone:</strong> +91 8085626546</p>
+      <p><strong>Location:</strong> Indore, India</p>
+    </div>
+
+    <form id="contact-form" class="contact-right">
+      <div class="input-row">
+        <input type="text" name="from_name" placeholder="Your Name" required>
+      </div>
+      <div class="input-row">
+        <input type="email" name="from_email" placeholder="Your Email" required>
+      </div>
+
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<footer>© 2026 Rishabh Singh Somvanshi</footer>
+
+<script>
+/* Loader */
+window.addEventListener("load",()=>{
+  gsap.to(".loader",{opacity:0,duration:1,onComplete:()=>document.querySelector(".loader").style.display="none"});
+});
+
+/* Cursor Glow */
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",(e)=>{
+  gsap.to(cursor,{x:e.clientX-12,y:e.clientY-12,duration:0.1});
+});
+
+/* Skill Bars Animation */
+gsap.utils.toArray(".skill-progress").forEach(bar=>{
+  gsap.to(bar,{
+    width:bar.dataset.width,
+    scrollTrigger:{
+      trigger:bar,
+      start:"top 80%"
+    },
+    duration:1.5
+  });
+});
+
+/* 3D Tilt */
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"),{
+  max:15,
+  speed:400,
+  glare:true,
+  "max-glare":0.3,
+});
+
+/* Theme Switcher */
+document.querySelector(".theme-toggle").addEventListener("click",()=>{
+  if(document.documentElement.style.getPropertyValue('--primary')=="#00f0ff"){
+    document.documentElement.style.setProperty('--primary',"#ff00ff");
+    document.documentElement.style.setProperty('--gradient',"linear-gradient(45deg,#ff00ff,#ff7300)");
+  }else{
+    document.documentElement.style.setProperty('--primary',"#00f0ff");
+    document.documentElement.style.setProperty('--gradient',"linear-gradient(45deg,#00f0ff,#8a2be2)");
+  }
+});
+</script>
+  
+<script>
+document.querySelectorAll(".portfolio-item img").forEach(img=>{
+  img.onclick = () => {
+    const modal = document.createElement("div");
+    modal.style.position="fixed";
+    modal.style.top=0;
+    modal.style.left=0;
+    modal.style.width="100%";
+    modal.style.height="100%";
+    modal.style.background="rgba(0,0,0,0.9)";
+    modal.style.display="flex";
+    modal.style.justifyContent="center";
+    modal.style.alignItems="center";
+    modal.innerHTML = `<img src="${img.src}" style="max-width:90%;max-height:90%">`;
+    modal.onclick = () => modal.remove();
+    document.body.appendChild(modal);
+  }
+});
+</script>
+<script>
+document.querySelectorAll(".cert-item img").forEach(img=>{
+  img.addEventListener("click",()=>{
+    const modal=document.createElement("div");
+    modal.style.position="fixed";
+    modal.style.top=0;
+    modal.style.left=0;
+    modal.style.width="100%";
+    modal.style.height="100%";
+    modal.style.background="rgba(0,0,0,0.9)";
+    modal.style.display="flex";
+    modal.style.justifyContent="center";
+    modal.style.alignItems="center";
+    modal.style.zIndex="2000";
+
+    modal.innerHTML=`<img src="${img.src}" style="max-width:90%;max-height:90%">`;
+    modal.onclick=()=>modal.remove();
+    document.body.appendChild(modal);
+  });
+});
+</script>
+<script>
+function toggleProject(card){
+  card.classList.toggle("active");
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("iX2zP4AVJTf2l6xVa");  // 🔁 replace this with your public key
+})();
+</script>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_gmail",      // 🔁 replace
+    "template_xpiheup",     // 🔁 replace
+    this
+  )
+  .then(function() {
+    alert("Message Sent Successfully 🚀");
+  }, function(error) {
+    alert("Failed to send message ❌");
+    console.log(error);
+  });
+
+  this.reset();
+});
+</script>
+</body>
+</html>
