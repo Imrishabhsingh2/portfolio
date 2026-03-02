@@ -20,7 +20,7 @@
 }
 
 .hero{
-  padding-top:100px;   /* prevents overlap */
+  padding-top:120px;   /* prevents overlap */
 }
 nav{
   display:flex;
@@ -71,13 +71,11 @@ nav{
     display:flex;
     flex-direction:column;
     align-items:center;
-    text-align:center;
-    padding:120px 20px 60px;
+    text-align:center;
     min-height:auto;
   }
 
-  .hero-image img{
-    padding-top: 300px;
+  .hero-image img{
     width:70%;
     max-width:260px;
     height:auto;
@@ -266,7 +264,6 @@ nav{
 }
 
 .hero-image img{
-  padding-top:300px;
   width:320px;
   border-radius:20px;
   position:relative;
@@ -274,11 +271,32 @@ nav{
   object-fit:cover;
   display:block;
 }
+@media(max-width:768px){
+
+  .hero{
+      flex-direction:column;
+      text-align:center;
+      padding:120px 20px 60px;
+  }
+
+  .hero-image{
+      margin-bottom:30px;
+  }
+
+  .hero-image img{
+      width:220px;
+  }
+
+  .image-glow{
+      width:280px;
+      height:250px;
+  }
+
+}
 
 /* Glow Effect */
 .image-glow{
-  padding-top:300px;
-  position:relative;
+  position: absolute;
   width:550px;
   height:400px;
   background:radial-gradient(circle, rgba(0,240,255,0.6) 0%, rgba(0,240,255,0.2) 40%, transparent 70%);
