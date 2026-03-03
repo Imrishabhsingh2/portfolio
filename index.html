@@ -848,13 +848,39 @@ section{
 
 /* Mobile Fix */
 @media(max-width:768px){
+
   .contact-wrapper{
-    flex-direction:column;
+    flex-direction:row;      /* keep side by side */
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .contact-left{
+    flex:1;
+    font-size:0.85rem;
+  }
+
+  .contact-right{
+    flex:1;
+    min-width:unset;
   }
 
   .input-row{
-    flex-direction:column;
+    flex-direction:row;      /* keep inputs in one row */
+    gap:10px;
   }
+
+  .contact-right input,
+  .contact-right textarea{
+    font-size:0.85rem;
+    padding:10px;
+  }
+
+  .contact-right button{
+    padding:10px;
+    font-size:0.85rem;
+  }
+
 }
 /* Footer */
 footer{
