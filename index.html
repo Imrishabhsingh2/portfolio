@@ -37,39 +37,29 @@ nav{
   color:#fff;
 }
 
-/* 🔥 Mobile Fix */
 @media(max-width:768px){
-
   nav{
-    flex-direction:column;
+    flex-direction:row;     /* keep in one row */
+    justify-content:space-between;
     align-items:center;
-    gap:10px;
-    padding:15px 8%;
+    padding:12px 5%;
   }
 
-  .logo img{
-    height:40px;
-  }
-
-  /* always show links in one row, centered */
   .nav-links{
     display:flex;
     flex-direction:row;
+    gap:15px;
     align-items:center;
-    justify-content:center;
-    gap:10px;
-    width:100%;
-    background:transparent;
-    padding:10px 0;
-    flex-wrap:wrap;
+  }
+
+  .logo img{
+    height:35px;
   }
 
   .menu-toggle{
-    display:none; /* hide hamburger completely */
+    display:none;
   }
-
 }
-
 /* HERO BASE */
 .hero{
   display:flex;
@@ -82,31 +72,48 @@ nav{
 @media(max-width:768px){
 
   .hero{
-    flex-direction:column;   /* stack vertically */
-    text-align:center;
-    padding:60px 20px;
-  }
-
-  .hero-content{
-    width:100%;
+    flex-direction:row;        /* side by side */
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:90px 20px 40px;
+    text-align:left;           /* align text left */
   }
 
   .hero-image{
-    width:100%;
+    flex:1;
     display:flex;
     justify-content:center;
   }
 
   .hero-image img{
-    width:250px;   /* smaller image for mobile */
+    width:160px;               /* smaller but clean */
+    height:auto;
+  }
+
+  .hero-content{
+    flex:1;
+    align-items:flex-start;    /* align text left */
+    gap:15px;
   }
 
   .hero h1{
-    font-size:1.8rem;
+    font-size:1.2rem;
+    line-height:1.2;
   }
 
+  .hero p{
+    font-size:0.85rem;
+  }
+
+  .btn{
+    margin-top:10px;
+    padding:8px 18px;
+    font-size:0.85rem;
+  }
 }
-  #about{
+
+#about{
   padding-top:0px;
   padding-bottom: 0px;
 }
@@ -521,36 +528,6 @@ nav a{
   border:none;
   color:#000;
   font-weight:600;
-}
-
-/* override responsive nav rules since earlier styles may be overwritten */
-@media(max-width:768px){
-  nav{
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-    padding:15px 8%;
-  }
-
-  .logo img{
-    height:40px;
-  }
-
-  .nav-links{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    width:100%;
-    background:transparent;
-    padding:10px 0;
-    flex-wrap:wrap;
-  }
-
-  .menu-toggle{
-    display:none;
-  }
 }
 
 /* Hero */
