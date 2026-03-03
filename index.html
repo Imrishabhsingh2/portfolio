@@ -36,34 +36,49 @@ nav{
   border:none;
   color:#fff;
 }
-
+/* 🔥 MOBILE NAVBAR */
 @media(max-width:768px){
 
   nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:12px 5%;
+    padding:15px 5%;
   }
 
   .logo img{
-    height:32px;
+    height:35px;
+  }
+
+  .menu-toggle{
+    display:block;
+    font-size:1.8rem;
+    background:none;
+    border:none;
+    color:#fff;
+    cursor:pointer;
   }
 
   .nav-links{
-    display:flex;
-    gap:12px;
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    backdrop-filter:blur(15px);
+    flex-direction:column;
     align-items:center;
+    gap:20px;
+    padding:30px 0;
+    display:none;
   }
 
   .nav-links a{
-    font-size:0.85rem;
-    margin:0;
+    font-size:1rem;
   }
 
-  .theme-toggle{
-    padding:6px 12px;
-    font-size:0.75rem;
+  .nav-links.active{
+    display:flex;
   }
 
 }
@@ -955,10 +970,10 @@ html, body{
 
 <nav>
   <div class="logo">
-    <img src="logos\main logo.png" alt="Rishabh Logo">
+    <img src="logos\main logo.png" alt="Logo">
   </div>
   <!-- hamburger / menu toggle shown on narrow screens -->
-  <button class="menu-toggle" aria-label="Open menu">☰</button>
+  <button class="menu-toggle" >☰</button>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -1444,20 +1459,11 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
 // mobile navigation toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-if(menuToggle && navLinks){
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // change icon to X when open
-    menuToggle.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
-  });
-  // close menu when clicking outside
-  document.addEventListener('click', e => {
-    if(navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuToggle) {
-      navLinks.classList.remove('active');
-      menuToggle.textContent = '☰';
-    }
-  });
-}
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
+});
 </script>
 </body>
 </html>
