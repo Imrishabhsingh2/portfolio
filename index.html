@@ -38,7 +38,37 @@ nav{
 }
 
 /* 🔥 Mobile Fix */
+@media(max-width:768px){
 
+  nav{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:15px 8%;
+  }
+
+  .logo img{
+    height:40px;
+  }
+
+  /* always show links in one row, centered */
+  .nav-links{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    background:transparent;
+    padding:10px 0;
+    flex-wrap:wrap;
+  }
+
+  .menu-toggle{
+    display:none; /* hide hamburger completely */
+  }
+
+}
 
 /* HERO BASE */
 .hero{
@@ -51,6 +81,31 @@ nav{
 /* 🔥 MOBILE FIX */
 @media(max-width:768px){
 
+  .hero{
+    flex-direction:column;   /* stack vertically */
+    text-align:center;
+    padding:60px 20px;
+  }
+
+  .hero-content{
+    width:100%;
+  }
+
+  .hero-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .hero-image img{
+    width:250px;   /* smaller image for mobile */
+  }
+
+  .hero h1{
+    font-size:1.8rem;
+  }
+
+}
   #about{
   padding-top:0px;
   padding-bottom: 0px;
@@ -109,7 +164,25 @@ nav{
   gap:30px;
 }
 /* Tablet */
+@media(max-width:992px){
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+/* Mobile: keep two cards per row; stack to single-col only on very narrow screens */
+@media(max-width:600px){
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* extra small phones */
+@media(max-width:400px){
+  .services-grid{
+    grid-template-columns: 1fr;
+  }
+}
 .service-card{
   background:rgba(255,255,255,0.05);
   padding:30px;
