@@ -30,11 +30,13 @@ nav{
 /* menu toggle icon (hidden by default) */
 .menu-toggle{
   display:none;
-  font-size:1.8rem;
-  cursor:pointer;
+  font-size:26px;
   background:none;
   border:none;
-  color:#fff;
+  cursor:pointer;
+  color:var(--primary);
+  padding:6px 10px;
+  z-index:1100;
 }
 /* 🔥 MOBILE NAVBAR */
 @media(max-width:768px){
@@ -52,13 +54,10 @@ nav{
 
   .menu-toggle{
     display:block;
-    font-size:1.8rem;
-    background:none;
-    border:none;
-    color:#fff;
-    cursor:pointer;
   }
-
+body.light-theme .menu-toggle{
+  color:#000;
+}
   .nav-links{
     position:absolute;
     top:70px;
@@ -613,6 +612,16 @@ nav a{
   border:none;
   color:#000;
   font-weight:600;
+}
+/* Hamburger icon color */
+.menu-toggle{
+  color:var(--primary);
+  z-index:1100;
+}
+
+/* Light theme hamburger */
+body.light-theme .menu-toggle{
+  color:#000;
 }
 
 /* Hero */
