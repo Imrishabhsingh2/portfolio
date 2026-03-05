@@ -14,12 +14,6 @@
 <style>
 
 /* Navbar Base */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 8%;
-}
 
 /* Right side links */
 .nav-links{
@@ -39,6 +33,9 @@ nav{
   padding:6px 10px;
   z-index:1100;
 }
+body.light-theme .menu-toggle{
+  color:#000;
+}
 /* 🔥 MOBILE NAVBAR */
 @media(max-width:768px){
 
@@ -56,9 +53,7 @@ nav{
   .menu-toggle{
     display:block;
   }
-body.light-theme .menu-toggle{
-  color:#000;
-}
+
   .nav-links{
     position:absolute;
     top:70px;
@@ -127,16 +122,6 @@ body.light-theme .menu-toggle{
   .hero p{
     font-size:0.85rem;
   }
-
-  .btn{
-  border:2px solid var(--primary);
-  color:var(--text);
-}
-
-.btn:hover{
-  background:var(--primary);
-  color:white;
-}
 }
 
 #about{
@@ -147,7 +132,6 @@ body.light-theme .menu-toggle{
   height:50px;      /* adjust size if needed */
   width:auto;
   cursor:pointer;
-  transition:0.3s ease;
 }
 
     .theme-toggle{
@@ -219,7 +203,6 @@ body.light-theme .menu-toggle{
 .service-card{
 background:var(--card);
   border:1px solid var(--border);
-  background:rgba(255,255,255,0.05);
   padding:30px;
   border-radius:20px;
   border:1px solid rgba(0,255,255,0.1);
@@ -418,16 +401,7 @@ background:var(--card);
   margin-bottom:40px;
   align-self: left;
 }
-@keyframes floatGlow{
-  from{
-    transform:scale(1);
-    opacity:0.7;
-  }
-  to{
-    transform:scale(1.1);
-    opacity:1;
-  }
-}
+
 .cert-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -478,16 +452,13 @@ background:var(--card);
   transform:translateY(0);
 }
 :root{
-  --bg:#000000;          /* Ink Black */
-  --section:#100C08;     /* Prussian Blue */
-  --card:#2A3439;        /* Oxford Navy */
-
-  --primary:#FFC300;     /* School Bus Yellow */
-  --accent:#FFD60A;      /* Gold */
-
-  --text:#f5f5f5;
+  --bg:#000000;
+  --section:#100C08;
+  --card:#2A3439;
+  --primary:#FFC300;
+  --accent:#FFD60A;
+  --text:#e5e5e5;
   --muted:#b8c0cc;
-
   --border:rgba(255,255,255,0.08);
   --gradient:linear-gradient(45deg,#FFC300,#FFD60A);
 }
@@ -598,17 +569,6 @@ body{
   color:var(--text);
 }
 
-/* Highlighted name gradient */
-.hero span{
-  background:var(--gradient);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-/* Dark mode text */
-:root{
-  --text:#e5e5e5;
-}
 
 /* Light mode text */
 body.light-theme{
@@ -621,9 +581,7 @@ body{
   overflow-x:hidden;
   cursor:none;
 }
-body, nav, section, .card, .service-card, .tool-card{
-  transition:all 0.4s ease;
-}
+
 
 /* Loader */
 .loader{
@@ -739,8 +697,9 @@ body.light-theme .menu-toggle{
 }
 
 .hero span{
-  color:#FFD60A;
-  text-shadow:0 0 12px rgba(255,214,10,0.4);
+background:var(--gradient);
+-webkit-background-clip:text;
+color:transparent;
 }
 .hero:hover .image-glow{
   background:radial-gradient(circle, rgba(255,214,10,0.9) 0%, rgba(255,195,0,0.5) 40%, transparent 70%);
@@ -780,7 +739,6 @@ body.light-theme .menu-toggle{
 .tool-card{
 background:var(--card);
   border:1px solid var(--border);
-  background:rgba(255,255,255,0.05);
   padding:25px;
   border-radius:20px;
   text-align:center;
@@ -804,18 +762,18 @@ background:var(--card);
   transform:scale(1.1);
 }
 .btn{
-  margin-top:30px;
-  padding:12px 30px;
-  border-radius:30px;
-  border:2px solid var(--primary);
-  color:var(--primary);
-  text-decoration:none;
-  transition:0.4s;
+margin-top:30px;
+padding:12px 30px;
+border-radius:30px;
+border:2px solid var(--primary);
+color:var(--primary);
+text-decoration:none;
+transition:0.4s;
 }
 
 .btn:hover{
-  background:var(--primary);
-  color:#000;
+background:var(--primary);
+color:#000;
 }
 
 /* Sections */
@@ -845,7 +803,6 @@ background:var(--section);
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  background:rgba(255,255,255,0.05);
   padding:35px;
   border-radius:20px;
   backdrop-filter:blur(20px);
@@ -884,7 +841,6 @@ background:var(--section);
 .project-card{
 background:var(--card);
   border:1px solid var(--border);
-  background:rgba(255,255,255,0.05);
   padding:30px;
   border-radius:20px;
   cursor:pointer;
@@ -1120,11 +1076,6 @@ footer{
     font-size:0.85rem !important;
     opacity:0.95;
   }
-
-  .btn{
-    padding:10px 18px;
-    font-size:0.95rem;
-  }
 }
 html, body{
   max-width:100%;
@@ -1163,15 +1114,6 @@ html, body{
 .hero:hover{
   background:radial-gradient(circle at center, rgba(255,214,10,0.08), transparent 70%);
   transition:0.4s ease;
-}
-  .btn{
-  border:2px solid var(--primary);
-  color:var(--primary);
-}
-
-.btn:hover{
-  background:var(--primary);
-  color:#000;
 }
 }
 /* Animated Theme Toggle */
@@ -1233,7 +1175,7 @@ input:checked + .slider::before{
 
 <nav>
   <div class="logo">
-    <img src="logos\main logo.png" alt="Logo">
+    <img src="logos/main logo.png" alt="Logo">
   </div>
   <!-- hamburger / menu toggle shown on narrow screens -->
   <button class="menu-toggle" >☰</button>
@@ -1446,7 +1388,7 @@ input:checked + .slider::before{
     </div>
   </div>
 </section>
-<section id="projects">
+<section id="portfolio">
   <h2 class="section-title">Social Media Posts</h2>
   <div class="portfolio-grid">
     
