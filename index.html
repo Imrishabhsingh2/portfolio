@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rishabh Singh Portfolio</title>
 <link rel="icon" type="image/png" href="logos/favicon.png">
- 
+
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -493,10 +493,25 @@ body.light-theme{
   --primary:#0077ff;
   --gradient:linear-gradient(45deg,#0077ff,#00c6ff);
 }
+/* Fix navbar links in light mode */
+body.light-theme nav a{
+  color:#111;
+}
 
+body.light-theme nav a:hover{
+  color:var(--primary);
+}
+
+/* Fix mobile menu background */
+body.light-theme .nav-links{
+  background:#ffffff;
+}
 body.light-theme{
   background:#f5f7fb;
   color:#111;
+}
+body{
+  transition:background 0.4s ease, color 0.4s ease;
 }
 
 /* Cards */
@@ -535,6 +550,7 @@ body.light-theme .project-card:hover{
   -webkit-background-clip:text;
   color:transparent;
 }
+
 *{
   margin:0;
   padding:0;
@@ -548,6 +564,9 @@ body{
   color:#fff;
   overflow-x:hidden;
   cursor:none;
+}
+body, nav, section, .card, .service-card, .tool-card{
+  transition:all 0.4s ease;
 }
 
 /* Loader */
