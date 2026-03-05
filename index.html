@@ -565,7 +565,37 @@ body.light-theme .project-card:hover{
   box-sizing:border-box;
   font-family:'Outfit',sans-serif;
 }
+/* Default text color */
+body{
+  color:var(--text);
+}
 
+/* Section titles */
+.section-title{
+  color:var(--primary);
+}
+
+/* Hero name */
+.hero h1{
+  color:var(--text);
+}
+
+/* Highlighted name gradient */
+.hero span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* Dark mode text */
+:root{
+  --text:#e5e5e5;
+}
+
+/* Light mode text */
+body.light-theme{
+  --text:#111827;
+}
 body{
   margin: 0px;
   background:var(--bg);
@@ -780,9 +810,7 @@ section{
 .section-title{
   font-size:2rem;
   margin-bottom:40px;
-  background:var(--gradient);
-  -webkit-background-clip:text;
-  color:transparent;
+  color:var(--text);
 }
 
 /* Cards */
