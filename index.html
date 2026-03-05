@@ -558,7 +558,16 @@ body.light-theme .project-card:hover{
   -webkit-background-clip:text;
   color:transparent;
 }
+section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
 
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
 *{
   margin:0;
   padding:0;
@@ -1698,6 +1707,18 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+</script>
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
 });
 </script>
 </body>
