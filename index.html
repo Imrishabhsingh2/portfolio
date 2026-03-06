@@ -531,16 +531,6 @@ grid-template-columns:1fr;
 grid-template-columns:repeat(2,1fr);
 }
 
-/* Magazine */
-.magazine-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-/* Certifications */
-.cert-grid{
-grid-template-columns:1fr;
-}
-
 /* Contact */
 .input-row{
 flex-direction:column;
@@ -700,6 +690,49 @@ grid-template-columns:repeat(2,1fr);
 height:280px;
 }
 }
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:30px;
+}
+
+.cert-item{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+background:var(--card);
+border:1px solid var(--border);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.cert-item img{
+width:100%;
+height:240px;
+object-fit:cover;
+display:block;
+transition:0.4s;
+}
+
+.cert-item:hover img{
+transform:scale(1.05);
+}
+@media (max-width:1024px){
+.cert-grid{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media (max-width:768px){
+.cert-grid{
+grid-template-columns:1fr;
+}
+
+.cert-item img{
+height:200px;
+}
+}
+
 </style>
 </head>
 
