@@ -292,26 +292,27 @@ box-shadow:0 0 25px rgba(255,195,0,0.3);
 .timeline{
 position:relative;
 max-width:900px;
-margin:auto;
-padding-left:30px;
+margin:0;
+padding-left:20px;
 }
 
-.timeline::before{
+.timeline-item::before{
 content:"";
 position:absolute;
-left:0;
-top:0;
-width:3px;
-height:100%;
+left:-25px;
+top:30px;
+width:14px;
+height:14px;
 background:var(--primary);
+border-radius:50%;
 }
 
 .timeline-item{
 position:relative;
 margin-bottom:40px;
-padding:25px 30px;
+padding:30px;
 background:var(--card);
-border-radius:15px;
+border-radius:20px;
 border:1px solid var(--border);
 transition:0.3s;
 }
