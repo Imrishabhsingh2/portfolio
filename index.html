@@ -779,6 +779,40 @@ max-height:400px;
 margin-top:8px;
 color:var(--muted);
 }
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+margin-top:30px;
+}
+@media (max-width:1024px){
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+}
+@media (max-width:768px){
+
+.project-card{
+padding:20px;
+transition:0.4s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(255,195,0,0.3);
+}
+.project-card h3{
+font-size:18px;
+}
+
+.project-card p,
+.project-card li{
+font-size:14px;
+}
+
+}
 .contact-wrapper{
 display:flex;
 gap:60px;
