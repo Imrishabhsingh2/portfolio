@@ -753,7 +753,33 @@ grid-template-columns:1fr;
 height:200px;
 }
 }
+.project-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:30px;
+border-radius:20px;
+cursor:pointer;
+transition:0.4s;
+}
 
+/* Hide full description */
+.project-details{
+max-height:0;
+overflow:hidden;
+transition:0.4s ease;
+margin-top:10px;
+}
+
+/* Expand when active */
+.project-card.active .project-details{
+max-height:400px;
+}
+
+/* small spacing */
+.short-desc{
+margin-top:8px;
+color:var(--muted);
+}
 </style>
 </head>
 
