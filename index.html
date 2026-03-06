@@ -641,7 +641,7 @@ transform:scale(1.05);
 @media (max-width:768px){
 
 .thumbnail-grid{
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(1,1fr);
 }
 
 .thumbnail-card img{
@@ -703,19 +703,40 @@ overflow:hidden;
 border-radius:20px;
 background:var(--card);
 border:1px solid var(--border);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .cert-item img{
 width:100%;
-height:240px;
+height:230px;
 object-fit:cover;
 display:block;
 transition:0.4s;
 }
 
+/* Hover zoom */
 .cert-item:hover img{
 transform:scale(1.05);
+}
+
+/* Bottom title overlay */
+.cert-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.75);
+color:white;
+text-align:center;
+padding:10px;
+font-size:14px;
+transform:translateY(100%);
+transition:0.4s;
+backdrop-filter:blur(8px);
+}
+
+/* Slide animation */
+.cert-item:hover .cert-overlay{
+transform:translateY(0);
 }
 @media (max-width:1024px){
 .cert-grid{
