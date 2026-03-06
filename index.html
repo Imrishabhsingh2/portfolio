@@ -536,11 +536,6 @@ grid-template-columns:repeat(2,1fr);
 grid-template-columns:repeat(2,1fr);
 }
 
-/* Thumbnail */
-.thumbnail-grid{
-grid-template-columns:1fr;
-}
-
 /* Certifications */
 .cert-grid{
 grid-template-columns:1fr;
@@ -627,6 +622,42 @@ font-size:14px;
 .tool-card:hover img{
 transform:scale(1.15);
 transition:0.3s;
+}
+.thumbnail-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:30px;
+}
+
+.thumbnail-card{
+overflow:hidden;
+border-radius:20px;
+background:var(--card);
+border:1px solid var(--border);
+}
+
+.thumbnail-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+transition:0.4s;
+}
+
+.thumbnail-card:hover img{
+transform:scale(1.05);
+}
+@media (max-width:768px){
+
+.thumbnail-grid{
+grid-template-columns:1fr;
+}
+
+.thumbnail-card img{
+height:200px;
+}
+
 }
 </style>
 </head>
